@@ -25,5 +25,9 @@ Welcome to Jenkins email alerts
 Thanks,
 Ashwani''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'ashwani90devops@gmail.com'
    }
-
+   
+   stage('Slack Notification'){
+          // Send Slack Notification
+          slackSend baseUrl: 'https://hooks.slack.com/services/', channel: '#jenkins-ashwani-devops', color: 'good', failOnError: true, message: 'Welcome To Jenkins Slack', teamDomain: 'ashwani90devops', tokenCredentialId: 'SlackToken'
+   }
 }
