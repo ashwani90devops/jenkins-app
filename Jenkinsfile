@@ -20,7 +20,7 @@ node {
           // Send Email Notification
           mail bcc: '', body: '''Hi
 
-Welcome to Jenkins email alerts ASHWANI
+Welcome to Jenkins email alerts ASHWANI007
 
 Thanks,
 Ashwani''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'ashwani90devops@gmail.com'
