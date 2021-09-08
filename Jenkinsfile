@@ -1,6 +1,6 @@
 node {
    // Defining variable	
-   // def sonarUrl = 'sonar.host.url=http://192.168.1.16:9000'
+      def sonarUrl = 'sonar.host.url=http://192.168.1.63:9000'
    // def mvn = tool (name: 'maven-jenkins', type: 'maven') + '/bin/mvn'
    
    stage('SCM Checkout'){
@@ -15,6 +15,12 @@ node {
 	  // Build using maven
 	  sh "mvn clean package"
    }
+
+   stage('SonarQube Analysis'){
+           withSonarQubeEnv('sonarqubeserver') {
+             sh "mvn sonar:sonar"
+	 }
+   }	
 
    stage('Email Notification'){
           // Send Email Notification
